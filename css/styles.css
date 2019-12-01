@@ -332,3 +332,7 @@ nav h1 a {
     width: 100%;
   }
 }
+
+:focus{
+  outline-color: red;
+}
