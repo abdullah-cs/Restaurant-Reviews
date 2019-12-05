@@ -73,10 +73,10 @@ fillCuisinesHTML = (cuisines = self.cuisines) => {
  */
 initMap = () => {
   self.newMap = L.map('map', {
-        center: [40.722216, -73.987501],
-        zoom: 12,
-        scrollWheelZoom: false
-      });
+    center: [40.722216, -73.987501],
+    zoom: 12,
+    scrollWheelZoom: false
+  });
   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.jpg70?access_token={mapboxToken}', {
     mapboxToken: 'pk.eyJ1IjoiYWJkdWxsYWgtY3MiLCJhIjoiY2szbGZ3MXA2MGtmNTNtbm1pbnA4MXBtYiJ9.AQ_qMdkbSa9avhPMm0Jk6g',
     maxZoom: 18,
@@ -199,7 +199,7 @@ addMarkersToMap = (restaurants = self.restaurants) => {
     self.markers.push(marker);
   });
 
-} 
+}
 /* addMarkersToMap = (restaurants = self.restaurants) => {
   restaurants.forEach(restaurant => {
     // Add marker to the map
@@ -211,3 +211,9 @@ addMarkersToMap = (restaurants = self.restaurants) => {
   });
 } */
 
+if (navigator.serviceWorker) {
+  navigator.serviceWorker.register('/sw.js')
+  .catch((e) => {
+    console.log("Failed to register the service worker.");
+  });
+}
