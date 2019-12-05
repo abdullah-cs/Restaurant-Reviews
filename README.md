@@ -1,5 +1,4 @@
-# Mobile Web Specialist Certification Course
----
+# Restaurant Reviews App
 
 ### How to run the project?
 
